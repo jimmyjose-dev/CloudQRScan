@@ -1,9 +1,14 @@
 CloudQRScan
 =====================
 
- Now opensource
+CloudQRScan is .com for ME, it’s a cloud based QR application that lets you save all the information that one would want to have on their personal website.
+
+ NOW OPENSOURCE
+ 
  Download the free app from:
+ 
  iOS 	 - https://itunes.apple.com/in/app/cloudqrscan/id699597535?mt=8
+ 
  Android - https://play.google.com/store/apps/details?id=com.varshylmobile.cloudqrscan&hl=en 
 
 > **Type of QRCodes it can detect:**
@@ -45,7 +50,7 @@ Screenshots
 
 > **About the app:**
 > 
-CloudQRScan is .com for ME, it’s world’s first cloud based QR application that lets you save all the information that one would want to have on their personal website, thus no need to have personal website – just get your SMART QR from www.cloudqrscan.com.
+CloudQRScan is .com for ME, it’s a cloud based QR application that lets you save all the information that one would want to have on their personal website, thus no need to have personal website – just get your SMART QR from www.cloudqrscan.com.
 
 FIRST APP EVER !!!
 To support QRCode reading directly from your phone mail.
