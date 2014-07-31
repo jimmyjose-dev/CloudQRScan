@@ -1,0 +1,321 @@
+//
+// Prefix header for all source files of the 'CloudQRScan' target in the 'CloudQRScan' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "ZBarSDK.h"
+#import "WebViewController.h"
+#import "MBProgressHUD.h"
+#import "EGOImageView.h"
+#import "AudioViewController.h"
+//#import "VerifyNetwork.h"
+//#import "SettingsViewController.h"
+//#import "CQRSMessages.h"
+#import <VMCategories/VMCategories.h>
+#import "DBManager.h"
+#import "String.h"
+#import <AddressBook/AddressBook.h>
+#import <AddressBookUI/AddressBookUI.h>
+#import "AppDelegate.h"
+#import "CustomNavigationController.h"
+#import "CommonButton.h"
+#import "LocationManagerDelegate.h"
+#import "Flurry.h"
+#import <Twitter/Twitter.h>
+#import <FacebookSDK/FacebookSDK.h>
+#import "ServerController.h"
+#endif
+
+#define kAppStore 0
+#define kDebug 1
+#define kLiveServer 1
+
+#if kAppStore
+#define kFlurryKey @"VQ2XNSWS93NMW38R5PD4"
+#else
+#define kFlurryKey @"Z7MJHB6CD2G3H2H4PSBP"
+#endif
+
+
+#define kGoogleApiKey     @"AIzaSyC5_P6FGF5nBSOvMa2rIIByFu2_AuY03j0"
+#define kFlurryLiveApiKey kFlurryKey
+#define kFlurryDevApiKey  @"Z7MJHB6CD2G3H2H4PSBP"
+
+#define kShowBuildInfo !kAppStore
+
+
+#define kOtherQRCode       @"Others"
+#define kCQRSProfile       @"CQRSProfile"
+#define kCQRSProfileNew    @"CQRSProfileNew"
+#define kCQRSProduct       @"CQRSProduct"
+#define kCQRSEncrypted     @"CQRSEncrypted"
+
+#define kQRCodeText     @"Text"
+#define kQRCodeAudio    @"Audio"
+#define kQRCodeDocument @"Document"
+#define kQRCodeCalender @"Calendar"
+#define kQRCodeiTunes   @"iTunes"
+#define kQRCodevCard    @"vCard"
+#define kQRCodemeCard   @"meCard"
+#define kQRCodeAudio    @"Audio"
+#define kQRCodeDoc      @"Document"
+#define kQRCodeDocPDF   @"Document_PDF"
+#define kQRCodeDocPPT   @"Document_PPT"
+#define kQRCodeDocDOC   @"Document_DOC"
+#define kQRCodeDocXLS   @"Document_XLS"
+#define kQRCodeDocOTH   @"Document_Other"
+#define kQRCodeBBM      @"BBM"
+#define kQRCodeWeb      @"Http"
+#define kQRCodePhone    @"Phone"
+#define kQRCodeSMS      @"SMS"
+#define kQRCodeMail1    @"Mail1"
+#define kQRCodeMail2    @"Mail2"
+#define kQRCodeMap      @"Map"
+#define kQRCodeBookmark @"Bookmark"
+#define kQRCodeWifi     @"Wi-Fi"
+
+#define kUserActiveKey      @"useractive"
+#define kUserIDKey          @"userid"
+#define kUserActiveEmailKey @"useremail"
+
+
+
+#define kHistoryTitle               @"History"
+#define kDeviceAuthorizationTitle   @"Device Authorization"
+#define kCreateQRTitle              @"Create QR"
+#define kSettingsTitle              @"Settings"
+#define kProductTitle               @"Product"
+
+#define kProductDocumentKey         @"Documents"
+#define kProductVideoKey            @"EmbededVideos"
+#define kProductImageKey            @"Images"
+#define kProductLikesKey            @"Likes"
+#define kProductPriceKey            @"Price"
+#define kProductEmailKey            @"Email"
+#define kProductPhoneKey            @"Phone"
+#define kProductBuyNowKey           @"BuyNow"
+
+
+#define kServiceQRProfile           @"QRProfile"
+#define kServiceQRProduct           @"QRProduct"
+
+#define kQRProfile                  @"QRProfile"
+//Define subheading for history
+#define kHistoryQRProfile                  @"QRProfile"
+#define kHistoryQRProduct                  @"QRProduct"
+#define kHistoryQRLocker                   @"QRLocker"
+#define kHistoryMail                       @"Mail"
+#define kHistorySMS                        @"SMS"
+#define kHistoryWeb                        @"Website"
+#define kHistoryText                       @"Text"
+#define kHistoryAudio                      @"Audio"
+#define kHistoryDocument                   @"Document"
+#define kHistoryPhone                      @"Phone"
+#define kHistoryEvent                      @"Event"
+#define kHistoryiTunes                     @"iTunes"
+#define kHistoryvCard                      @"vCard"
+#define kHistorymeCard                     @"meCard"
+#define kHistoryGeolocation                @"Geolocation" 
+#define kHistoryBookmark                   @"Bookmark" 
+#define kHistoryWifi                       @"Wi-Fi"
+#define kHistoryBBM                        @"BBM"
+
+#define kTextTitle     @"Text"
+#define kAudioTitle    @"Audio Player"
+#define kDocumentTitle @"Document Viewer"
+#define kCalendarTitle @"Calendar"
+#define kvCardTitle    @"vCard"
+
+#define kErrorStr @"Error_"
+
+#define kGothamLight        @"Gotham-Light"
+#define kGothamBlack        @"Gotham-Black"
+#define kGothamThin         @"Gotham-Thin"
+#define kGothamExtraLight   @"Gotham-ExtraLight"
+#define kGothamBold         @"Gotham-Bold"
+#define kGothamMedium       @"Gotham-Medium"
+#define kGothamUltra        @"Gotham-Ultra"
+#define kGothamBook         @"Gotham-Book"
+
+#define kHeaderFont         kGothamBold
+#define kCellHeadingFont    kGothamMedium
+#define kCellSubHeadingFont kGothamBook
+#define kHeaderFontSize         22.0
+#define kCellHeadingFontSize    17.0
+#define kCellSubHeadingFontSize 12.0
+
+#define kAppVersion   [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]
+
+#define kSignInImageViewTag 666
+
+#define kTimeoutInterval 5
+
+
+#if kLiveServer
+#define kSERVER_DOMAIN @"http://cloudqrscan.com"
+#else
+#define kSERVER_DOMAIN @"http://dev.cloudqrscan.com"
+#endif
+
+#define kPRIVACY_POLICY_LINK @"http://cloudqrscan.com/privacy-policy.aspx"
+#define kABOUT_US_LINK       @"http://cloudqrscan.com/about-us.aspx"
+
+#define kCQRSProfileMarker1  [NSString stringWithFormat:@"%@/vd/",kSERVER_DOMAIN]
+#define kCQRSProfileMarker2  @"cloudqrscan.com/view-details.aspx?id="
+
+#define kCQRSProductMarker1  [NSString stringWithFormat:@"%@/pd/",kSERVER_DOMAIN]
+#define kCQRSProductMarker2  @"cloudqrscan.com/view-details.aspx?id="
+
+#define kSERVER_URL [NSString stringWithFormat:@"%@/QRService.svc",kSERVER_DOMAIN]
+
+#define kCreateQRPRofile_URL  [NSString stringWithFormat:@"%@/profiles.aspx",kSERVER_DOMAIN]
+#define kCreateQRLocker_URL  [NSString stringWithFormat:@"%@/qr-locker-creator.aspx",kSERVER_DOMAIN]
+//#define kCreateQRPLocker_URL  [NSString stringWithFormat:@"%@/qr-locker-creator.aspx",kSERVER_DOMAIN]
+
+
+#define kGET_PROFILE_DATA_METHOD_NAME               @"GetQR"
+#define kGET_PROFILE_DATA_BY_NAME_METHOD_NAME       @"GetQRByProfileName"
+#define kGET_PROFILE_LESS_DATA_METHOD_NAME          @"ProfileUserDetails"
+#define kDEVICE_AUTHORIZATION_METHOD_NAME           @"AuthorizeQRLockerMessage"
+#define kREQUEST_DEVICE_AUTHORIZATION_METHOD_NAME   @"RequestDeviceAuthorization"
+#define kREQUEST_DEVICE_DEAUTHORIZATION_METHOD_NAME @"DeviceDeAuthorization"
+#define kDEVICE_AUTHORIZATION_LIST_METHOD_NAME      @"AuthoriseProfiles"
+#define kQRLOCKER_STATUS_METHOD_NAME                @"GetQRLockerStatus"
+#define kQRUSER_REGISTRATION_METHOD_NAME            @"QrRegistration"
+#define kUSER_LOGIN_METHOD_NAME                     @"GetUserLogin"
+#define kUSER_FORGOTPASSWORD_METHOD_NAME            @"ForgotPassword"
+#define kGET_PRODUCT_DATA_METHOD_NAME               @"GetQRProduct"
+#define kGET_PRODUCT_LIKE_METHOD_NAME               @"UpdateProductLikes"
+#define kGET_VERSION_CHECK_METHOD_NAME              @"CheckQrVersion"//@"CheckVersion"
+#define kHISTORY_SYNC_METHOD_NAME                   @"HistorySync"
+#define kFEEDBACK_METHOD_NAME                       @"Feedback"
+#define kBUGREPORT_METHOD_NAME                      @"BugReport"
+
+
+
+
+#define BUGREPORT_URL \
+[NSString stringWithFormat:@"%@/%@",kSERVER_URL,kBUGREPORT_METHOD_NAME]
+
+#define FEEDBACK_URL \
+[NSString stringWithFormat:@"%@/%@",kSERVER_URL,kFEEDBACK_METHOD_NAME]
+
+
+#define HISTORY_SYNC_URL \
+[NSString stringWithFormat:@"%@/%@",kSERVER_URL,kHISTORY_SYNC_METHOD_NAME]
+
+
+#define VERSION_CHECK_URL \
+[NSString stringWithFormat:@"%@/%@/iphone/%@",kSERVER_URL,kGET_VERSION_CHECK_METHOD_NAME,kAppVersion]
+
+
+#define PROFILE_DATA_URL(__ProfileId__) \
+[NSString stringWithFormat:@"%@/%@/%@",kSERVER_URL,kGET_PROFILE_DATA_METHOD_NAME,__ProfileId__]
+
+#define PROFILE_DATA_BY_NAME_URL(__ProfileName__) \
+[NSString stringWithFormat:@"%@/%@/%@",kSERVER_URL,kGET_PROFILE_DATA_BY_NAME_METHOD_NAME,__ProfileName__]
+
+
+#define PROFILE_LESS_DATA_URL(__ProfileId__) \
+[NSString stringWithFormat:@"%@/%@/%@",kSERVER_URL,kGET_PROFILE_LESS_DATA_METHOD_NAME,__ProfileId__]
+
+
+#define DEVICE_AUTHORIZATION_URL(__ProfileId__,__DeviceUDID__,__QRLockerID__) \
+[NSString stringWithFormat:@"%@/%@/%@/%@/%@",kSERVER_URL,kDEVICE_AUTHORIZATION_METHOD_NAME, __ProfileId__,__DeviceUDID__,__QRLockerID__]
+
+#define REQUEST_DEVICE_AUTHORIZATION_URL \
+[NSString stringWithFormat:@"%@/%@",kSERVER_URL,kREQUEST_DEVICE_AUTHORIZATION_METHOD_NAME]
+
+#define REQUEST_DEVICE_DEAUTHORIZATION_URL \
+[NSString stringWithFormat:@"%@/%@",kSERVER_URL,kREQUEST_DEVICE_DEAUTHORIZATION_METHOD_NAME]
+
+#define DEVICE_AUTHORIZATION_LIST_URL(__DeviceUDID__) \
+[NSString stringWithFormat:@"%@/%@/%@",kSERVER_URL,kDEVICE_AUTHORIZATION_LIST_METHOD_NAME,__DeviceUDID__]
+
+
+#define QRLOCKER_STATUS_URL(__ProfileId__,__QRLockerID__, __MD5PASS__) \
+[NSString stringWithFormat:@"%@/%@/%@/%@/%@",kSERVER_URL,kQRLOCKER_STATUS_METHOD_NAME, __ProfileId__,__QRLockerID__, __MD5PASS__]
+
+#define QRREGISTRATION_URL  [NSString stringWithFormat:@"%@/%@",kSERVER_URL,kQRUSER_REGISTRATION_METHOD_NAME]
+
+#define USERLOGIN_URL(__EmailID__,__Password__) \
+[NSString stringWithFormat:@"%@/%@/%@/%@",kSERVER_URL,kUSER_LOGIN_METHOD_NAME,__EmailID__,__Password__]
+
+#define USERFORGOTPASSWORD_URL(__EmailID__) \
+[NSString stringWithFormat:@"%@/%@/%@",kSERVER_URL,kUSER_FORGOTPASSWORD_METHOD_NAME,__EmailID__]
+
+
+#define PRODUCT_DATA_URL(__ProductId__) \
+[NSString stringWithFormat:@"%@/%@/%@",kSERVER_URL,kGET_PRODUCT_DATA_METHOD_NAME,__ProductId__]
+
+#define PRODUCT_LIKE_URL(__ProductId__,__DeviceUDID__) \
+[NSString stringWithFormat:@"%@/%@/%@/%@",kSERVER_URL,kGET_PRODUCT_LIKE_METHOD_NAME,__ProductId__,__DeviceUDID__]
+#if kLiveServer
+#define kFlurryApiKey kFlurryLiveApiKey
+#else
+#define kFlurryApiKey kFlurryDevApiKey
+#endif
+
+
+
+
+#define kAppDelegate (AppDelegate *)[[UIApplication sharedApplication] delegate]
+
+#define kShouldMakeSound     [[NSUserDefaults standardUserDefaults] boolForKey:@"enableScannerSound"]
+#define kCheckDeviceAutoLock [[NSUserDefaults standardUserDefaults] boolForKey:@"shouldDeviceAutoLock"]
+
+#define kVibrate 1
+#if kVibrate
+#define PLAY_SOUND(__SoundObject__) AudioServicesPlayAlertSound (__SoundObject__)
+#else
+#define PLAY_SOUND(__SoundObject__) AudioServicesPlaySystemSound(__SoundObject__)
+#endif
+
+
+
+
+#ifndef DLog
+#if kDebug
+#define DLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+#define DDLogLevel LOG_LEVEL_VERBOSE
+#else
+#define DLog(...)
+#define DDLogLevel LOG_LEVEL_OFF
+#endif
+#endif
+
+
+
+
+#ifndef ULog
+#if kDebug
+#define ULog(fmt, ...)  { UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"%s\n [Line %d] ", __PRETTY_FUNCTION__, __LINE__] message:[NSString stringWithFormat:fmt, ##__VA_ARGS__]  delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil]; [alert show]; }
+#else
+#   define ULog(...)
+#endif
+#endif
+
+#define kShareMessage @"This is a QR Code and/or Information created via a new creative app from <a href='http://www.varshylmobile.com'>Varshyl Mobile</a> called <a href='https://itunes.apple.com/us/app/cloudqrscan/id699597535?mt=8&uo=4'>CloudQRScan App</a>.<p>The app is <b>free</b> and:<br>- It helps individuals and professionals create their <b>own QR codes</b> with audio and image that is <b>personalized</b> and <b>unique</b> to you only.  Create yours now so you can be the 1st one to own your <b>own QR code</b>.<br>-  The app works on any QR Code created by any QR Generator"
+
+#define kShareMessageFacebook  @"This is a QR Code and/or Information created via a new creative app CloudQRScan.  The app is free and it helps individuals and professionals create their own QR codes with audio and image that is personalized and unique to you only.  Create yours now so you can be the 1st one to own your own QR code"
+
+
+#define kShareMessageTwitter  @"This is a QR Code and/or Information created via a new creative app CloudQRScan.  The app is free."
+
+#define kShareMessageSubject  @"QRCode shared via CloudQRScan"
+
+#define kNoInternetAvailable @"No internet available"
+
+/*
+#define ksd @"This is a QR Code and/or Information created via a new creative app from <a src="http://wwww.varshylmobile.com">Varshyl Mobile</a> called <a src="">CloudQRScan App</a>.<p>
+The app is free and:<p>
+- It helps individuals and professionals create their own QR codes with audio and image that is personalized and unique to you only.  Create yours now so you can be the 1st one to own your own QR code.<p>
+-  The app works on any QR Code created by any QR Generator" */

@@ -1,0 +1,2 @@
+1)Add Flurry
+2)If the url has .mp3 file stream it ..same for pdf/doc

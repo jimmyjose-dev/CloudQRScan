@@ -1,0 +1,135 @@
+----------------------------------------------------------------------------------------
+Credits:
+1) Matt Gemmell
+2) Kevin O'Neill (UsefulBits)
+3) Shaun Harrison
+4) Kazki Miura (REKit)
+5) Zachary Waldowski (BlocksKit) [Awesome work cause he even wrote documentation]
+6) Robert Rasmussen (UIView Badge)
+7) Nicklockwood https://github.com/nicklockwood/ColorUtils
+8) Jesper/Ben Gorden (Colors for iOS)
+9) Sebastian Rehnby (POViewFrameBuilder)
+10) Simon B. Støvring (BSKeyboardControls)
+11) Angelo Villegas
+12) Cédric Luthi (Font Replacer)
+13) Stefano Acerbetti (ACAutoCompleteBar)
+14) Lars Anderson (MMProgressHUD)
+
+
+
+
+
+July 31 2013
+added:
+
+NSURL
++ (NSURL *)URLByCheckingHTTPWithString:(NSString *)urlString
+
+
+
+
+
+July 21 2013
+
+added:
+NSString:
+
+
+- (NSData *)dataASCII;
+- (NSData *)dataUTF8;
+- (NSData *)dataUTF16;
+- (NSData *)dataUTF32;
+
++ (NSString *)stringFromDataWithASCIIEncoding:(NSData *)data;
++ (NSString *)stringFromDataWithUTF8Encoding: (NSData *)data;
++ (NSString *)stringFromDataWithUTF16Encoding:(NSData *)data;
++ (NSString *)stringFromDataWithUTF32Encoding:(NSData *)data;
+- (BOOL)beginsWithString:(NSString *)aString;
+- (BOOL)beginsWithString:(NSString *)aString ignoringCase:(BOOL)flag;
+- (BOOL)endsWithString:(NSString *)aString;
+- (BOOL)endsWithString:(NSString *)aString ignoringCase:(BOOL)flag;
+
+UIViewController:
+- (id)initByAppendingDeviceName;
+- (void)initByAppendingDeviceNameAndPush;
+- (void)initByAppendingDeviceNameAndPushAnimated:(BOOL)animated;
+- (id)initByAppendingDeviceNameWithTitle:(NSString*)title;
+- (void)initByAppendingDeviceNameAndPushWithTitle:(NSString*)title;
+- (void)initByAppendingDeviceNameAndPushWithTitle:(NSString*)title animated:(BOOL)animated;
+- (id)initByAppendingDeviceNameForNibName:(NSString *)forNibName;
+- (void)initByAppendingDeviceNameAndPushForNibName:(NSString *)forNibName;
+- (void)initByAppendingDeviceNameAndPushForNibName:(NSString *)forNibName animated:(BOOL)animated;
+- (id)initByAppendingDeviceNameForNibName:(NSString *)forNibName withTitle:(NSString*)title;
+- (void)initByAppendingDeviceNameAndPushForNibName:(NSString *)forNibName withTitle:(NSString*)title;
+- (void)initByAppendingDeviceNameAndPushForNibName:(NSString *)forNibName withTitle:(NSString*)title animated:(BOOL)animated;
+
+
+UIView:
+UIViewBadge
+POViewFrameBuilder
+
+- (UIImage *)screenshot;
+@property(nonatomic,retain)NSString *tagName;
+- (CGPoint)origin;
+- (void)setOrigin:(CGPoint)newOrigin;
+- (CGSize)size;
+- (void)setSize:(CGSize)newSize;
+
+- (CGFloat)x;
+- (void)setX:(CGFloat)newX;
+- (CGFloat)y;
+- (void)setY:(CGFloat)newY;
+
+- (CGFloat)height;
+- (void)setHeight:(CGFloat)newHeight;
+- (CGFloat)width;
+- (void)setWidth:(CGFloat)newWidth;
+
+- (void)printSubViewAtLevel:(int)level;
+- (void)printSubView;
+
+
+-(BOOL)hasSubViewWithTag:(int)tag;
+-(BOOL)hasSubViewWithTagName:(NSString *)tagName;
+-(BOOL)hasSubViewWithKindOfClass:(NSString *)className;
+
+-(id)subViewWithTag:(int)tag;
+-(id)subViewWithTagName:(NSString *)tagName;
+-(id)subViewWithKindOfClass:(NSString *)className;
+
+
+-(BOOL)hasSubViewWithKindOfClass:(NSString *)className andTag:(int)tag;
+-(BOOL)hasSubViewWithKindOfClass:(NSString *)className andTagName:(NSString *)tagName;
+-(BOOL)hasSubViewWithKindOfClass:(NSString *)className tag:(int)tag andTagName:(NSString *)tagName;
+
+
+-(id)subViewWithKindOfClass:(NSString *)className andTag:(int)tag;
+-(id)subViewWithKindOfClass:(NSString *)className andTagName:(NSString *)tagName;
+-(id)subViewWithKindOfClass:(NSString *)className tag:(int)tag andTagName:(NSString *)tagName;
+
+
+UIColor: added 100 colors
++ (UIColor *)colorWithString:(NSString *)string;
++ (UIColor *)colorWithRGBValue:(int32_t)rgb;
++ (UIColor *)colorWithRGBAValue:(uint32_t)rgba;
+- (UIColor *)initWithString:(NSString *)string;
+- (UIColor *)initWithRGBValue:(int32_t)rgb;
+- (UIColor *)initWithRGBAValue:(uint32_t)rgba;
+
+- (int32_t)RGBValue;
+- (uint32_t)RGBAValue;
+- (NSString *)stringValue;
+
+- (BOOL)isMonochromeOrRGB;
+- (BOOL)isEquivalent:(id)object;
+- (BOOL)isEquivalentToColor:(UIColor *)color;
+----------------------------------------------------------------------------------------
+
+
+----------------------------------------------------------------------------------------
+July 4 2013
+
+Categories.
+-(NSString *)removeString:(NSString *)aString
+
+----------------------------------------------------------------------------------------
