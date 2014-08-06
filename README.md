@@ -13,22 +13,39 @@ CloudQRScan is .com for ME, it’s a cloud based QR application that lets you sa
 
 > **Type of QRCodes it can detect:**
 > QRProfile (Individual/Business) [Create account at http://www.cloudqrscan.com/]
+
 > QRLocker (Encrypted QRCode) [Create account at http://www.cloudqrscan.com/]
+
 > QRPoduct [Create account at http://www.cloudqrscan.com/]
+
 > Text
+
 > Calender
+
 > Itunes
+
 > vCard
+
 > meCard
+
 > Website
+
 > Phone
+
 > SMS
+
 > Mail
+
 > Map
+
 > Bookmark
+
 > Wifi
+
 > Audio
+
 > Document
+
 > BBM
 
 > **Create QRCodes too**
@@ -48,12 +65,12 @@ Screenshots
 
 
 
-> **About the app:**
-> 
-CloudQRScan is .com for ME, it’s a cloud based QR application that lets you save all the information that one would want to have on their personal website, thus no need to have personal website – just get your SMART QR from www.cloudqrscan.com.
 
-FIRST APP EVER !!!
-To support QRCode reading directly from your phone mail.
+> **FIRST APP EVER !!!**
+>To support QRCode reading directly from your phone mail.
+
+About the app:
+CloudQRScan is .com for ME, it’s a cloud based QR application that lets you save all the information that one would want to have on their personal website, thus no need to have personal website – just get your SMART QR from www.cloudqrscan.com.
 
 CQRS is smart QR lets you create QR Profile.
 QR Profile - Smart replacement for your personal website. Lets you save -
@@ -89,7 +106,7 @@ In order to use CQRS, your device must have a built-in camera. When scanning cod
 ----------
 
 
-Contact me
+Contact Us
 ---------------
 
-Have any questions or suggestions feel free to write to me at jimmy@varshyl.com
+Have any questions or suggestions feel free to write to Jimmy Jose at jimmy@varshyl.com
