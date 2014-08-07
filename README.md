@@ -1,4 +1,4 @@
-CloudQRScan
+![CloudQRScan][1]CloudQRScan
 =====================
 
 CloudQRScan is .com for ME, it’s a cloud based QR application that lets you save all the information that one would want to have on their personal website.
@@ -111,3 +111,6 @@ Contact Us
 
 Have any questions or suggestions feel free to write at jimmy@varshyl.com (Jimmy Jose)
 http://www.varshylmobile.com/
+
+
+  [1]: https://s5.mzstatic.com/us/r30/Purple6/v4/41/37/e7/4137e7ea-fbe6-c175-9484-175d3411daf8/icon170x170.png
