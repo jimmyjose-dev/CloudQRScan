@@ -109,4 +109,5 @@ In order to use CQRS, your device must have a built-in camera. When scanning cod
 Contact Us
 ---------------
 
-Have any questions or suggestions feel free to write to Jimmy Jose at jimmy@varshyl.com
+Have any questions or suggestions feel free to write at jimmy@varshyl.com (Jimmy Jose)
+http://www.varshylmobile.com/
