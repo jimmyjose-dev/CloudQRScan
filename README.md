@@ -117,3 +117,7 @@ http://www.varshylmobile.com/
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/varshylmobile/cloudqrscan/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/varshylmobile/cloudqrscan/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
